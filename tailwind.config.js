@@ -7,12 +7,31 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      animation: {
+        animationToast: 'animationToast 500ms ease-in-out',
+        animationSearch: 'animationSearch 200ms linear',
+      },
+
+      keyframes: {
+        animationToast: {
+          '0%': {
+            transform: 'translateY(100%)',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+          },
+        },
+
+        animationSearch: {
+          '0%': {
+            width: '0px',
+          },
+          '100%': {
+            width: '250px',
+          },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }
